@@ -85,7 +85,23 @@ footer a{display:block;text-decoration:none;margin:9px 0;color:#e8d8cc;font-size
 @media(max-width:900px){.hg,.prod,.fg{grid-template-columns:1fr;gap:28px}.prod:nth-of-type(even) .gal{order:0}.nav{display:none}.hg{padding:36px 0}.hshow{border-radius:120px 120px 10px 10px}
 .steps,.faq,.ft{grid-template-columns:1fr}section.c{padding:54px 0}.hero p{max-width:none}.hdr-wa{display:none}.fg img{max-height:520px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hshow img{transition:none}}
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}
+.chip{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:40px;padding:9px 20px;min-height:42px}
+.chip[aria-pressed=true]{background:var(--wine);border-color:var(--wine);color:#fff}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:42px 26px}.pc{min-width:0}
+.pc .track img{aspect-ratio:4/3.6}.pm{padding:16px 2px 0}.pm small{color:var(--gold);font-weight:600;font-size:.84rem}
+.pm h3{margin:4px 0 2px}.pm .desc{color:var(--mute);font-size:.9rem;white-space:pre-line;margin:8px 0 12px}
+.badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--wine);color:#fff;font-size:.76rem;font-weight:600;padding:4px 13px;border-radius:20px}.badge.so{background:#555}
+.dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.dots i{width:7px;height:7px;border-radius:50%;background:#fffa;box-shadow:0 0 0 1px #0003}.dots i.on{background:var(--wine)}
+.btn:disabled{opacity:.5;cursor:not-allowed}.btn.full{width:100%}
+.empty{text-align:center;padding:60px 20px;background:var(--paper);border:1px solid var(--line);border-radius:10px;color:var(--mute)}.more{text-align:center;margin-top:44px}
+@media(max-width:1000px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.pgrid{grid-template-columns:1fr}}
 
+.fd{list-style:none;margin:6px 0 16px;padding:0}.fd li{position:relative;padding:5px 0 5px 22px;font-size:.92rem;line-height:1.5}
+.fd li:before{content:"";position:absolute;left:3px;top:.95em;width:7px;height:7px;border-radius:50%;background:var(--gold)}.fd b{font-weight:700;color:var(--wine)}
+.pm .price small{display:block;color:var(--mute);font-weight:400;font-size:.82rem;margin-top:2px}
 @keyframes up{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
 @keyframes drop{from{opacity:0;transform:translateY(-100%)}to{opacity:1;transform:none}}
 @keyframes zoom{from{opacity:0;transform:scale(.94) translateY(24px)}to{opacity:1;transform:none}}
@@ -198,7 +214,7 @@ function card(p){
  if(p.category)m.append(mk("small","",p.category));
  m.append(mk("h3","",p.name));
  if(p.code)m.append(mk("div","code",p.code));
- if(p.desc)m.append(mk("p","desc",p.desc));
+ if(p.desc){const ls=p.desc.split("\n").map(x=>x.trim()).filter(Boolean),ul=mk("ul","fd");ls.forEach(l=>{const k=/^([^:]{1,30}):\s*(.+)$/.exec(l);if(k){const li=mk("li");li.append(mk("b","",k[1]+":"),document.createTextNode(" "+k[2]));ul.append(li)}else m.append(mk("p","desc",l))});if(ul.children.length)m.append(ul)}
  const pr=mk("div","price");pr.append(document.createTextNode(p.price?money(p.price):"Price on WhatsApp"));pr.append(mk("small","",CFG.deliveryNote));m.append(pr);
  let b;if(p.soldout){b=mk("button","btn full","Sold out");b.disabled=true}
  else{b=mk("a","btn wa full");b.href="#";b.target="_blank";b.rel="noopener";b.dataset.wa=orderMsg(p);b.innerHTML='<svg aria-hidden="true"><use href="#wa"/></svg>';b.append("Order on WhatsApp");bindWA(b)}
