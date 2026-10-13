@@ -151,6 +151,15 @@ footer a{display:block;text-decoration:none;margin:9px 0;color:#e8d8cc;font-size
 .soc a:hover{background:var(--gold);color:#241419;transform:translateY(-4px)}.soc svg{width:19px;height:19px;fill:currentColor}
 .hsoc{display:flex;gap:8px}.hsoc a{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;color:var(--wine);transition:background .2s,color .2s}.hsoc a:hover{background:var(--wine);color:#fff}.hsoc svg{width:18px;height:18px;fill:currentColor}
 @media(max-width:1100px){.hsoc{display:none}}
+.soc a,.hsoc a,.fol a{border:0!important;color:#fff!important;box-shadow:0 6px 14px -6px rgba(0,0,0,.45)}
+.soc a[data-social=facebook],.hsoc a[data-social=facebook],.fol a[data-social=facebook]{background:linear-gradient(145deg,#2f8bff,#1160d8)!important}
+.soc a[data-social=tiktok],.hsoc a[data-social=tiktok],.fol a[data-social=tiktok]{background:#0b0b0f!important;box-shadow:0 6px 14px -6px rgba(0,0,0,.6),inset 0 0 0 1px #3a3a44}
+.soc a:hover,.hsoc a:hover{transform:translateY(-4px) scale(1.08);filter:brightness(1.12)}.soc svg,.hsoc svg{width:22px;height:22px;fill:none}
+.hsoc a{width:42px;height:42px}.soc a{width:46px;height:46px}
+.fol{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+.fol a{display:inline-flex;align-items:center;gap:12px;padding:14px 30px 14px 20px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1rem;transition:transform .25s,filter .2s}
+.fol a:hover{transform:translateY(-5px);filter:brightness(1.12)}.fol svg{width:28px;height:28px;fill:none}
+.fol-sec{text-align:center;background:var(--blush);border-top:1px solid var(--line)}.fol-sec p{color:#5d4a52;max-width:460px;margin:0 auto 26px}
 .wafab{position:fixed;right:16px;bottom:16px;z-index:25;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:40px;box-shadow:0 6px 18px #0004;display:flex;gap:8px;align-items:center}
 .wafab svg{width:21px;height:21px;fill:#fff}
 .lb{position:fixed;inset:0;z-index:50;background:rgba(20,10,14,.94);display:flex;align-items:center;justify-content:center;padding:20px;flex-direction:column}
@@ -183,8 +192,8 @@ footer a{display:block;text-decoration:none;margin:9px 0;color:#e8d8cc;font-size
   <path d="M30 20.5l1.6 1.6-1.6 1.6-1.6-1.6z" fill="#e3c995"/>
   <circle cx="14.5" cy="30" r="1.2" fill="#e3c995"/><circle cx="45.5" cy="30" r="1.2" fill="#e3c995"/>
  </symbol>
- <symbol id="fb" viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.95.4-1.7 1.8-1.7h1.6V3.8c-.3 0-1.3-.15-2.4-.15-2.5 0-4.1 1.5-4.1 4.2v2.65H7.6v3.3h2.8V22z"/></symbol>
-  <symbol id="tt" viewBox="0 0 24 24"><path d="M16.6 2h-3.2v13.1a2.9 2.9 0 1 1-2-2.75V9.1a6.1 6.1 0 1 0 5.2 6V8.7a7.5 7.5 0 0 0 4.4 1.4V6.9a4.4 4.4 0 0 1-4.4-4.4z"/></symbol>
+ <symbol id="fb" viewBox="0 0 24 24"><path fill="#fff" d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.95.4-1.7 1.8-1.7h1.6V3.8c-.3 0-1.3-.15-2.4-.15-2.5 0-4.1 1.5-4.1 4.2v2.65H7.6v3.3h2.8V22z"/></symbol>
+  <symbol id="tt" viewBox="0 0 24 24"><path fill="#25F4EE" transform="translate(-.8 -.6)" d="M16.6 2h-3.2v13.1a2.9 2.9 0 1 1-2-2.75V9.1a6.1 6.1 0 1 0 5.2 6V8.7a7.5 7.5 0 0 0 4.4 1.4V6.9a4.4 4.4 0 0 1-4.4-4.4z"/><path fill="#FE2C55" transform="translate(.8 .6)" d="M16.6 2h-3.2v13.1a2.9 2.9 0 1 1-2-2.75V9.1a6.1 6.1 0 1 0 5.2 6V8.7a7.5 7.5 0 0 0 4.4 1.4V6.9a4.4 4.4 0 0 1-4.4-4.4z"/><path fill="#fff" d="M16.6 2h-3.2v13.1a2.9 2.9 0 1 1-2-2.75V9.1a6.1 6.1 0 1 0 5.2 6V8.7a7.5 7.5 0 0 0 4.4 1.4V6.9a4.4 4.4 0 0 1-4.4-4.4z"/></symbol>
   <symbol id="wa" viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-3.1.8.83-3-.2-.32A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 3.9c-.2 0-.5.07-.75.35-.25.27-1 1-1 2.4s1.03 2.8 1.17 3c.14.2 2 3.2 4.9 4.4 2.4.95 2.9.76 3.4.7.5-.05 1.7-.7 1.9-1.4.24-.7.24-1.3.17-1.4-.07-.12-.27-.2-.57-.35-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.2.3-.75.95-.92 1.15-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.37-1.46-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.52-.08-.15-.65-1.6-.9-2.18-.23-.56-.47-.48-.65-.49Z"/></symbol>
 </svg>
 <div class="ann" id="ann"></div>
@@ -210,6 +219,8 @@ footer a{display:block;text-decoration:none;margin:9px 0;color:#e8d8cc;font-size
   <div class="head"><div><span class="eyebrow">Discover</span><h2>Shop by collection</h2></div><p>Two collections, each with its own full photo gallery and details.</p></div>
   <div class="gate" id="gate"></div>
  </section>
+<section class="fol-sec"><div class="wrap c" style="padding:60px 0"><span class="eyebrow">Stay connected</span><h2>Follow Ayesha Couture</h2><p>See new designs first on our social pages.</p>
+  <div class="fol"><a data-social="facebook" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#fb"/></svg>Follow on Facebook</a><a data-social="tiktok" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#tt"/></svg>Follow on TikTok</a></div></div></section>
 </div>
 
 <!-- ============ WOMEN ============ -->
