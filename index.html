@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ayesha Beauty & Style | Husn-e-Sadgi Winter Collection</title>
-<meta name="description" content="Husn-e-Sadgi winter 3-piece suits: dyed slub karandi dhanak shirt, trouser and velvet zari shawl. Rs 4,000 with free delivery. New: Rangeen Kaliya printed festive suits.">
+<meta name="description" content="Husn-e-Sadgi winter 3-piece suits: dyed slub karandi dhanak shirt, trouser and velvet zari shawl. Rs 4,000 with free delivery.">
 <link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,7 +73,6 @@ section{padding:64px 0}
 .card:hover .thumb img.alt{opacity:1}
 .card:hover .thumb img{transform:scale(1.03)}
 .badge{position:absolute;top:12px;left:12px;z-index:2;background:var(--green);color:#fff;font-size:.72rem;font-weight:600;padding:4px 11px;border-radius:999px;letter-spacing:.03em}
-.badge.new{left:auto;right:12px;background:var(--gold);color:#2A1520}
 .card-body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
 .brandline{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .card h3{font-family:var(--serif);font-size:1.25rem;color:var(--plum);display:flex;align-items:center;gap:10px}
@@ -84,18 +83,6 @@ section{padding:64px 0}
 .card .price small{display:block;font-weight:400;font-size:.72rem;color:var(--green)}
 .add{background:var(--plum);color:#fff;border-radius:999px;padding:9px 18px;font-size:.86rem;font-weight:500;transition:.2s}
 .add:hover{background:var(--rose-dark)}
-
-/* new collection feature */
-.rk{background:linear-gradient(180deg,#F1F6EE,#FFF8F4)}
-.feature{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center;margin-bottom:44px}
-.feature-img{border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(31,90,60,.22);max-width:420px;margin:0 auto}
-.feature-img img{width:100%;height:auto}
-.feature-txt .price-tag{margin-bottom:16px}
-.feature-txt ul{list-style:none;display:grid;gap:8px;margin:0 0 22px}
-.feature-txt li{display:flex;gap:10px;font-size:.95rem;color:#4b3a42}
-.feature-txt li::before{content:"✦";color:var(--gold)}
-.banner{border-radius:20px;overflow:hidden;margin-bottom:44px;border:1px solid var(--line)}
-.banner img{width:100%;height:auto}
 
 /* included */
 .included{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -189,7 +176,6 @@ footer small.copy{color:#d9aebb;font-size:.78rem}
   .modal-box{grid-template-columns:1fr}
   .three,.steps{grid-template-columns:1fr}
   .steps{gap:30px}
-  .feature{grid-template-columns:1fr;gap:24px}
   .links a.hide-s{display:none}
 }
 @media (max-width:560px){
@@ -209,7 +195,7 @@ footer small.copy{color:#d9aebb;font-size:.78rem}
 </head>
 <body>
 
-<div class="topbar">🚚 Free delivery on every order &nbsp;•&nbsp; Husn-e-Sadgi Winter &amp; Rangeen Kaliya Festive</div>
+<div class="topbar">🚚 Free delivery on every order &nbsp;•&nbsp; Husn-e-Sadgi Winter Collection</div>
 
 <header>
   <div class="wrap nav">
@@ -218,8 +204,7 @@ footer small.copy{color:#d9aebb;font-size:.78rem}
       <span><b>Ayesha Beauty &amp; Style</b><small>Cosmetics • Clothes</small></span>
     </a>
     <nav class="links">
-      <a href="#collection" class="hide-s">Winter</a>
-      <a href="#rangeen" class="hide-s">Rangeen Kaliya</a>
+      <a href="#collection" class="hide-s">Collection</a>
       <a href="#included" class="hide-s">What's included</a>
       <a href="#how" class="hide-s">How to order</a>
       <button class="cart-btn" id="cartBtn" aria-label="Open cart">🛍 Cart <span class="count" id="cartCount">0</span></button>
@@ -255,42 +240,11 @@ footer small.copy{color:#d9aebb;font-size:.78rem}
   </div>
 </section>
 
-<!-- NEW: Rangeen Kaliya -->
-<section class="rk" id="rangeen">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">New • Printed Festive Chapter • Book 751</span>
-      <h2>Rangeen Kaliya</h2>
-      <p>Digital printed slub linen 3-piece suits in soft festive colours.</p>
-      <div class="rule"></div>
-    </div>
-    <div class="feature">
-      <div class="feature-img"><img src="images/rk-cover.jpg" alt="Rangeen Kaliya printed festive collection, Book 751" loading="lazy"></div>
-      <div class="feature-txt">
-        <div class="price-tag">
-          <span class="price" id="rkPrice">Rs 6,000</span>
-          <span class="pill">🚚 Free Delivery</span>
-          <span class="pill">3-Piece Set</span>
-        </div>
-        <ul>
-          <li>Digital printed slub linen shirt with embellished patch work daman</li>
-          <li>Printed slub linen trouser</li>
-          <li>Embellished printed sleeves</li>
-          <li>Malhmal printed cut work duppata</li>
-        </ul>
-        <a class="btn" href="#gridRK">Shop Rangeen Kaliya</a>
-      </div>
-    </div>
-    <div class="banner"><img src="images/rk-collage.jpg" alt="Rangeen Kaliya floral epiphany" loading="lazy"></div>
-    <div class="grid" id="gridRK"></div>
-  </div>
-</section>
-
 <section class="included" id="included">
   <div class="wrap">
     <div class="sec-head">
       <h2>What's in every set</h2>
-      <p>Husn-e-Sadgi · Book 754 · three pieces in the same colour</p>
+      <p>Book 754 · three pieces in the same colour</p>
       <div class="rule"></div>
     </div>
     <div class="three">
@@ -336,11 +290,15 @@ footer small.copy{color:#d9aebb;font-size:.78rem}
     <button class="close" data-close aria-label="Close">×</button>
     <div class="gallery"><div class="main"><img id="pmMain" alt=""></div><div class="thumbs" id="pmThumbs"></div></div>
     <div class="info">
-      <span class="brandline" id="pmBrand">Gull-E-Rukh · Book 754</span>
+      <span class="brandline">Gull-E-Rukh · Book 754</span>
       <h2 id="pmTitle"></h2>
       <div class="big" id="pmPrice"></div>
       <span class="pill" style="align-self:flex-start">🚚 Free Delivery</span>
-      <ul id="pmItems"></ul>
+      <ul>
+        <li>Dyed slub karandi dhanak shirt</li>
+        <li>Dyed slub karandi trouser</li>
+        <li>Dyed slub karandi velvet zari shawl</li>
+      </ul>
       <div class="actions">
         <button class="btn" id="pmAdd">Add to cart</button>
         <button class="btn ghost" id="pmBuy">Order now</button>
@@ -377,94 +335,59 @@ footer small.copy{color:#d9aebb;font-size:.78rem}
 /* ================== STORE SETTINGS (edit these) ================== */
 const STORE = {
   name: "Ayesha Beauty & Style",
-  price: 4000,                 // Husn-e-Sadgi: price of each suit in Rs
-  priceRK: 6000,               // Rangeen Kaliya: price of each suit in Rs
+  price: 4000,                 // price of each suit in Rs
   whatsapp: "",                // your number with country code, e.g. "923001234567" (a leading 0 also works: "03001234567")
   facebook: "",                // e.g. "https://www.facebook.com/your-page"
   tiktok: ""                   // e.g. "https://www.tiktok.com/@your-account"
 };
 /* ================================================================= */
 
-/* Each collection has its own price, book number and what is included. Delivery is free for all. */
-const COLLECTIONS = {
-  hs: {
-    title: "Husn-e-Sadgi", book: "Book 754", price: STORE.price, isNew: false,
-    meta: "3-piece: shirt, trouser & velvet zari shawl",
-    items: ["Dyed slub karandi dhanak shirt", "Dyed slub karandi trouser", "Dyed slub karandi velvet zari shawl"]
-  },
-  rk: {
-    title: "Rangeen Kaliya", book: "Book 751", price: STORE.priceRK, isNew: true,
-    meta: "3-piece: printed shirt, trouser & malhmal duppata",
-    items: ["Digital printed slub linen shirt, embellished patch work daman", "Printed slub linen trouser", "Embellished printed sleeves", "Malhmal printed cut work duppata"]
-  }
-};
-
 const PRODUCTS = [
-  /* Husn-e-Sadgi (price and delivery unchanged) */
-  { col:"hs", id:"blue",       name:"Royal Blue", hex:"#2E2C8F", count:6 },
-  { col:"hs", id:"maroon",     name:"Maroon",     hex:"#7A1530", count:5 },
-  { col:"hs", id:"mustard",    name:"Mustard",    hex:"#B8921A", count:5 },
-  { col:"hs", id:"teal",       name:"Teal Blue",  hex:"#1F4E68", count:5 },
-  { col:"hs", id:"purple",     name:"Purple",     hex:"#4B1A66", count:6 },
-  { col:"hs", id:"periwinkle", name:"Periwinkle", hex:"#6B6FA6", count:6 },
-  /* Rangeen Kaliya, Rs 6,000, free delivery */
-  { col:"rk", id:"rk-pista",   name:"Pista Green", hex:"#B9CCA8", count:8 },
-  { col:"rk", id:"rk-lilac",   name:"Lilac",       hex:"#A98BC8", count:8 },
-  { col:"rk", id:"rk-brown",   name:"Cream Brown", hex:"#8A4A33", count:8 },
-  { col:"rk", id:"rk-peach",   name:"Peach",       hex:"#D9A88E", count:8 },
-  { col:"rk", id:"rk-pink",    name:"Pink",        hex:"#E58FB0", count:2 }
-].map(p => {
-  const c = COLLECTIONS[p.col];
-  return { ...p, price: c.price, title: c.title + " – " + p.name,
-           images: Array.from({length:p.count}, (_, i) => `images/${p.id}-${i+1}.jpg`) };
-});
+  { id:"blue",       name:"Royal Blue", hex:"#2E2C8F", count:6 },
+  { id:"maroon",     name:"Maroon",     hex:"#7A1530", count:5 },
+  { id:"mustard",    name:"Mustard",    hex:"#B8921A", count:5 },
+  { id:"teal",       name:"Teal Blue",  hex:"#1F4E68", count:5 },
+  { id:"purple",     name:"Purple",     hex:"#4B1A66", count:6 },
+  { id:"periwinkle", name:"Periwinkle", hex:"#6B6FA6", count:6 }
+].map(p => ({ ...p, title: "Husn-e-Sadgi – " + p.name,
+              images: Array.from({length:p.count}, (_, i) => `images/${p.id}-${i+1}.jpg`) }));
 
 const $ = (s, r=document) => r.querySelector(s);
 const money = n => "Rs " + n.toLocaleString("en-PK");
-const prod = id => PRODUCTS.find(p => p.id === id);
 let cart = [];            // [{id, qty}]
 let current = null;       // product open in the modal
 
 /* ---------- storage (safe) ---------- */
-function loadCart(){ try { const v = JSON.parse(localStorage.getItem("ayesha_cart") || "[]"); if (Array.isArray(v)) cart = v.filter(x => prod(x.id) && x.qty > 0); } catch(e){ cart = []; } }
+function loadCart(){ try { const v = JSON.parse(localStorage.getItem("ayesha_cart") || "[]"); if (Array.isArray(v)) cart = v.filter(x => PRODUCTS.some(p => p.id === x.id) && x.qty > 0); } catch(e){ cart = []; } }
 function saveCart(){ try { localStorage.setItem("ayesha_cart", JSON.stringify(cart)); } catch(e){} }
 
-/* ---------- product grids ---------- */
-function cardHTML(p){
-  const c = COLLECTIONS[p.col];
-  return `
+/* ---------- product grid ---------- */
+function renderGrid(){
+  $("#grid").innerHTML = PRODUCTS.map(p => `
     <article class="card">
       <button class="thumb" data-open="${p.id}" aria-label="View ${p.title}">
         <span class="badge">Free Delivery</span>
-        ${c.isNew ? '<span class="badge new">New</span>' : ''}
         <img src="${p.images[0]}" alt="${p.title}" loading="lazy">
-        <img class="alt" src="${p.images[1] || p.images[0]}" alt="" loading="lazy">
+        <img class="alt" src="${p.images[1]}" alt="" loading="lazy">
       </button>
       <div class="card-body">
-        <span class="brandline">Gull-E-Rukh · ${c.book}</span>
+        <span class="brandline">Gull-E-Rukh · Book 754</span>
         <h3><span class="dot" style="background:${p.hex}"></span>${p.name}</h3>
-        <span class="meta">${c.meta}</span>
+        <span class="meta">3-piece: shirt, trouser &amp; velvet zari shawl</span>
         <div class="row">
-          <div class="price">${money(p.price)}<small>Free delivery</small></div>
+          <div class="price">${money(STORE.price)}<small>Free delivery</small></div>
           <button class="add" data-add="${p.id}">Add to cart</button>
         </div>
       </div>
-    </article>`;
-}
-function renderGrid(){
-  $("#grid").innerHTML   = PRODUCTS.filter(p => p.col === "hs").map(cardHTML).join("");
-  $("#gridRK").innerHTML = PRODUCTS.filter(p => p.col === "rk").map(cardHTML).join("");
+    </article>`).join("");
 }
 
 /* ---------- modal ---------- */
 function openProduct(id){
-  const p = prod(id); if (!p) return;
-  const c = COLLECTIONS[p.col];
+  const p = PRODUCTS.find(x => x.id === id); if (!p) return;
   current = p;
   $("#pmTitle").textContent = p.title;
-  $("#pmPrice").textContent = money(p.price);
-  $("#pmBrand").textContent = "Gull-E-Rukh · " + c.book;
-  $("#pmItems").innerHTML = c.items.map(t => `<li>${t}</li>`).join("");
+  $("#pmPrice").textContent = money(STORE.price);
   setMain(0);
   $("#pmThumbs").innerHTML = p.images.map((src, i) => `<button data-thumb="${i}" class="${i===0?'on':''}" aria-label="Photo ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join("");
   show($("#productModal"));
@@ -495,11 +418,7 @@ function changeQty(id, d){
   saveCart(); renderCart();
 }
 function removeItem(id){ cart = cart.filter(x => x.id !== id); saveCart(); renderCart(); }
-function totals(){
-  const n = cart.reduce((s, x) => s + x.qty, 0);
-  const total = cart.reduce((s, x) => s + x.qty * prod(x.id).price, 0);
-  return { n, total };
-}
+function totals(){ const n = cart.reduce((s, x) => s + x.qty, 0); return { n, total: n * STORE.price }; }
 function renderCart(){
   const { n, total } = totals();
   $("#cartCount").textContent = n;
@@ -507,20 +426,20 @@ function renderCart(){
   $("#checkoutBtn").disabled = n === 0;
   $("#cartBody").innerHTML = n === 0
     ? `<div class="empty">Your cart is empty.<br><br><a class="btn" href="#collection" data-close>Browse the collection</a></div>`
-    : cart.map(x => { const p = prod(x.id); return `
+    : cart.map(x => { const p = PRODUCTS.find(q => q.id === x.id); return `
       <div class="line">
         <img src="${p.images[0]}" alt="">
-        <div><b>${p.title}</b><small>${money(p.price)} each</small>
+        <div><b>${p.title}</b><small>${money(STORE.price)} each</small>
           <div class="qty"><button data-dec="${p.id}" aria-label="Less">−</button><span>${x.qty}</span><button data-inc="${p.id}" aria-label="More">+</button></div>
           <div><button class="rm" data-rm="${p.id}">Remove</button></div></div>
-        <div class="amt">${money(x.qty * p.price)}</div>
+        <div class="amt">${money(x.qty * STORE.price)}</div>
       </div>`; }).join("");
 }
 
 /* ---------- checkout ---------- */
 function openCheckout(){
   const { total } = totals(); if (!total) return;
-  const lines = cart.map(x => { const p = prod(x.id); return `<div><span>${p.title} × ${x.qty}</span><span>${money(x.qty * p.price)}</span></div>`; }).join("");
+  const lines = cart.map(x => { const p = PRODUCTS.find(q => q.id === x.id); return `<div><span>${p.name} × ${x.qty}</span><span>${money(x.qty * STORE.price)}</span></div>`; }).join("");
   $("#coInner").innerHTML = `
     <h2 id="coTitle">Delivery details</h2>
     <div class="sum">${lines}<div><span>Delivery</span><span style="color:var(--green)">FREE</span></div><div style="font-weight:600;color:var(--plum)"><span>Total</span><span>${money(total)}</span></div></div>
@@ -539,7 +458,7 @@ function openCheckout(){
 }
 function buildMessage(f){
   const { total } = totals();
-  const items = cart.map((x, i) => { const p = prod(x.id); return `${i+1}. ${p.title} × ${x.qty} = ${money(x.qty * p.price)}`; }).join("\n");
+  const items = cart.map((x, i) => { const p = PRODUCTS.find(q => q.id === x.id); return `${i+1}. ${p.title} × ${x.qty} = ${money(x.qty * STORE.price)}`; }).join("\n");
   return `Assalam o Alaikum! I would like to place an order.\n\n🛍 Order\n${items}\n\nDelivery: FREE\nTotal: ${money(total)}\n\n👤 Name: ${f.name}\n📞 Phone: ${f.phone}\n🏙 City: ${f.city}\n📍 Address: ${f.addr}${f.note ? "\n📝 Note: " + f.note : ""}`;
 }
 function waNumber(){
@@ -603,7 +522,6 @@ $("#checkoutBtn").addEventListener("click", openCheckout);
 
 /* ---------- start ---------- */
 $("#heroPrice").textContent = money(STORE.price);
-$("#rkPrice").textContent = money(STORE.priceRK);
 $("#year").textContent = new Date().getFullYear();
 loadCart(); renderGrid(); renderCart(); renderContacts();
 </script>
