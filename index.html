@@ -408,10 +408,11 @@ const PRODUCTS = [
   { col:"hs", id:"purple",     name:"Purple",     hex:"#4B1A66", count:6 },
   { col:"hs", id:"periwinkle", name:"Periwinkle", hex:"#6B6FA6", count:6 },
   /* Rangeen Kaliya, Rs 6,000, free delivery */
-  { col:"rk", id:"rk-pista",   name:"Pista Green", hex:"#B9CCA8", count:5 },
-  { col:"rk", id:"rk-lilac",   name:"Lilac",       hex:"#A98BC8", count:5 },
-  { col:"rk", id:"rk-brown",   name:"Cream Brown", hex:"#8A4A33", count:5 },
-  { col:"rk", id:"rk-peach",   name:"Peach",       hex:"#D9A88E", count:5 }
+  { col:"rk", id:"rk-pista",   name:"Pista Green", hex:"#B9CCA8", count:8 },
+  { col:"rk", id:"rk-lilac",   name:"Lilac",       hex:"#A98BC8", count:8 },
+  { col:"rk", id:"rk-brown",   name:"Cream Brown", hex:"#8A4A33", count:8 },
+  { col:"rk", id:"rk-peach",   name:"Peach",       hex:"#D9A88E", count:8 },
+  { col:"rk", id:"rk-pink",    name:"Pink",        hex:"#E58FB0", count:2 }
 ].map(p => {
   const c = COLLECTIONS[p.col];
   return { ...p, price: c.price, title: c.title + " – " + p.name,
