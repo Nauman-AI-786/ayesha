@@ -1,0 +1,7 @@
+# Roz ki nayi suits yahan likho. Har suit ki ek line.
+# Format:  Naam | Price | pic1.jpg, pic2.jpg, pic3.jpg
+# Jin lines ke shuru mein # hai wo website nahi parhti.
+# Pics ke naam bilkul wahi likho jo images folder mein hain.
+#
+# Misaal (isay use karne ke liye shuru ka # hata do):
+# Rose Pink | 2150 | rose1.jpg, rose2.jpg, rose3.jpg
