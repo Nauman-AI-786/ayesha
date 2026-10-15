@@ -343,7 +343,7 @@ function card(p,kind){
  const rows=[["Code",p.code],["Colour",p.colour]].concat(p.details||[]);
  rows.forEach(r=>{if(!r[1])return;const li=mk("li");li.append(mk("b","",r[0]+":"),document.createTextNode(" "+r[1]));ul.append(li)});
  dt.append(ul);m.append(dt);
- const pr=mk("div","price");if(p.was){pr.append(mk("s","was",money(p.was)),document.createTextNode(" "));}pr.append(document.createTextNode(p.price?money(p.price):"Price on WhatsApp"));if(p.was&&p.price)pr.append(mk("span","off","Save "+money(p.was-p.price)));pr.append(mk("small","",CFG.deliveryNote));m.append(pr);
+ const pr=mk("div","price");if(p.was){pr.append(mk("s","was",money(p.was)),document.createTextNode(" "));}pr.append(document.createTextNode(p.price?money(p.price):"Price on WhatsApp"));if(p.was&&p.price)pr.append(mk("span","off","Save "+money(p.was-p.price)));pr.append(mk("small","",p.free?"Free delivery":CFG.deliveryNote));m.append(pr);
  let b;if(p.soldout){b=mk("button","btn full","Sold out");b.disabled=true}
  else{b=mk("a","btn wa full");b.href="#";b.target="_blank";b.rel="noopener";b.dataset.wa=orderMsg(p,kind);b.innerHTML='<svg aria-hidden="true"><use href="#wa"/></svg>';b.append("Order on WhatsApp");bindWA(b)}
  m.append(b);w.append(slider(p),m);return w}
@@ -361,9 +361,20 @@ function collection(o){
   if(cat==="All"&&list.length<=shown)els.push(soonCard(o.soon));
   grid.replaceChildren(...els);more.hidden=list.length<=shown;
   if(o.status)$(o.status).textContent=list.length+" colour"+(list.length===1?"":"s")+" in this view"}
- more.onclick=()=>{shown+=o.page;render()};render()}
-collection({items:WOMEN,kind:"women",chips:"chips-w",grid:"grid-w",more:"more-w",page:24,all:"All suits",soon:"Our latest ladies' suits are added here regularly."});
+ more.onclick=()=>{shown+=o.page;render()};render();return render}
+const renderW=collection({items:WOMEN,kind:"women",chips:"chips-w",grid:"grid-w",more:"more-w",page:24,all:"All suits",soon:"Our latest ladies' suits are added here regularly."});
 collection({items:MEN,kind:"men",chips:"chips-m",grid:"grid-m",more:"more-m",page:24,all:"All colours",status:"status-m",soon:"More colours are added to the men's collection regularly."});
+
+/* extra collections from the images folder; a suit whose photos are missing is skipped */
+(function(){
+ const HS={cat:"Husn-e-Sadgi",price:4000,book:"Book 754",d:[["Shirt","Dyed slub karandi dhanak shirt with lace detailing"],["Trouser","Dyed slub karandi trouser with matching lace finish"],["Shawl","Dyed slub karandi velvet zari shawl"]]};
+ const RK={cat:"Rangeen Kaliya",price:6000,book:"Book 751",d:[["Shirt","Digital printed slub linen shirt, embellished patch work daman"],["Trouser","Printed slub linen trouser"],["Sleeves","Embellished printed sleeves"],["Dupatta","Malhmal printed cut work duppata"]]};
+ const L=[[HS,"blue","Royal Blue","#2E2C8F",6],[HS,"maroon","Maroon","#7A1530",5],[HS,"mustard","Mustard","#B8921A",5],[HS,"teal","Teal Blue","#1F4E68",5],[HS,"purple","Purple","#4B1A66",6],[HS,"periwinkle","Periwinkle","#6B6FA6",6],
+  [RK,"rk-pista","Pista Green","#B9CCA8",5],[RK,"rk-lilac","Lilac","#A98BC8",5],[RK,"rk-brown","Cream Brown","#8A4A33",5],[RK,"rk-peach","Peach","#D9A88E",5],[RK,"rk-pink","Pink","#E58FB0",5],[RK,"rk-aqua","Aqua Blue","#5FC3C8",5],[RK,"rk-blue","Sky Blue","#8FB4DD",5],[RK,"rk-mustard","Mustard","#BFA83A",5]];
+ const probe=u=>new Promise(r=>{const i=new Image();i.onload=()=>r(u);i.onerror=()=>r(null);i.src=u});
+ Promise.all(L.map(async(x,k)=>{const c=x[0],id=x[1],imgs=(await Promise.all(Array.from({length:x[4]},(_,i)=>probe("images/"+id+"-"+(i+1)+".jpg")))).filter(Boolean);
+  return imgs.length?{id:"x-"+id,code:(c===HS?"HS-":"RK-")+String(k%8+1).padStart(2,"0"),name:c.cat+" \u2013 "+x[2],category:c.cat,colour:x[2],hex:x[3],price:c.price,free:true,details:[["Book",c.book]].concat(c.d),images:imgs,added:"2026-10-14",soldout:false}:null})).then(a=>{const ok=a.filter(Boolean);if(ok.length){WOMEN.push(...ok);renderW()}});
+})();
 
 /* home: hero slideshow + gateway tiles */
 (function(){const h=$("hshow"),items=WOMEN.filter(p=>p.images&&p.images[0]);
