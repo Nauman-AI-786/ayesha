@@ -371,18 +371,18 @@ collection({items:MEN,kind:"men",chips:"chips-m",grid:"grid-m",more:"more-m",pag
  const RK={cat:"Rangeen Kaliya",price:6000,book:"Book 751",d:[["Shirt","Digital printed slub linen shirt, embellished patch work daman"],["Trouser","Printed slub linen trouser"],["Sleeves","Embellished printed sleeves"],["Dupatta","Malhmal printed cut work duppata"]]};
  const L=[[HS,"blue","Royal Blue","#2E2C8F",6],[HS,"maroon","Maroon","#7A1530",5],[HS,"mustard","Mustard","#B8921A",5],[HS,"teal","Teal Blue","#1F4E68",5],[HS,"purple","Purple","#4B1A66",6],[HS,"periwinkle","Periwinkle","#6B6FA6",6],
   [RK,"rk-pista","Pista Green","#B9CCA8",5],[RK,"rk-lilac","Lilac","#A98BC8",5],[RK,"rk-brown","Cream Brown","#8A4A33",5],[RK,"rk-peach","Peach","#D9A88E",5],[RK,"rk-pink","Pink","#E58FB0",5],[RK,"rk-aqua","Aqua Blue","#5FC3C8",5],[RK,"rk-blue","Sky Blue","#8FB4DD",5],[RK,"rk-mustard","Mustard","#BFA83A",5]];
- const probe=u=>new Promise(r=>{const i=new Image();i.onload=()=>r(u);i.onerror=()=>r(null);i.src=u});
+ const probe=u=>fetch(u,{method:"HEAD"}).then(r=>r.ok?u:null).catch(()=>null);
  Promise.all(L.map(async(x,k)=>{const c=x[0],id=x[1],imgs=(await Promise.all(Array.from({length:x[4]},(_,i)=>probe("images/"+id+"-"+(i+1)+".jpg")))).filter(Boolean);
   return imgs.length?{id:"x-"+id,code:(c===HS?"HS-":"RK-")+String(k%8+1).padStart(2,"0"),name:c.cat+" \u2013 "+x[2],category:c.cat,colour:x[2],hex:x[3],price:c.price,free:true,details:[["Book",c.book]].concat(c.d),images:imgs,added:"2026-10-14",soldout:false}:null})).then(a=>{const ok=a.filter(Boolean);if(ok.length){WOMEN.push(...ok);renderW()}});
 })();
 
 /* daily suits: read from new.txt (one suit per line: Name | Price | pic1.jpg, pic2.jpg) */
 fetch("new.txt?"+Date.now()).then(r=>r.ok?r.text():"").then(async t=>{
- const probe=u=>new Promise(r=>{const i=new Image();i.onload=()=>r(u);i.onerror=()=>r(null);i.src=u});
+ const probe=u=>fetch(u,{method:"HEAD"}).then(r=>r.ok?u:null).catch(()=>null);
  const rows=t.split(/\r?\n/).map(l=>l.trim()).filter(l=>l&&l[0]!=="#"&&l.includes("|"));
  const out=await Promise.all(rows.map(async(l,k)=>{const a=l.split("|").map(x=>x.trim()),pics=(a[2]||"").split(",").map(x=>x.trim()).filter(Boolean);
   const imgs=(await Promise.all(pics.map(f=>probe("images/"+encodeURI(f))))).filter(Boolean);
-  return a[0]&&imgs.length?{id:"n-"+k,code:"N-"+String(k+1).padStart(2,"0"),name:a[0],category:"New arrivals",price:parseInt(String(a[1]).replace(/\D/g,""))||0,details:[],images:imgs,soldout:false}:null}));
+  return a[0]&&imgs.length?{id:"n-"+k,code:"N-"+String(k+1).padStart(2,"0"),name:a[0],category:"New arrivals",price:parseInt(String(a[1]).replace(/\D/g,""))||0,details:(a[3]||"").split(";").map(x=>{const j=x.indexOf(":");return j>0?[x.slice(0,j).trim(),x.slice(j+1).trim()]:null}).filter(x=>x&&x[0]&&x[1]),images:imgs,soldout:false}:null}));
  const ok=out.filter(Boolean);if(ok.length){WOMEN.unshift(...ok);renderW()}}).catch(()=>{});
 
 /* home: hero slideshow + gateway tiles */
