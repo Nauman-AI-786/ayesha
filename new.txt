@@ -6,3 +6,7 @@
 # Misaal (isay use karne ke liye shuru ka # hata do):
 # Rose Pink | 2150 | rose1.jpg, rose2.jpg, rose3.jpg
 
+
+Gul-e-Rukh 1 | 7000 | suit1-collage.jpg, suit1-1.jpg, suit1-2.jpg, suit1-3.jpg, suit1-4.jpg, suit1-5.jpg, suit1-6.jpg, suit1-7.jpg, suit1-8.jpg
+Gul-e-Rukh 2 | 7000 | suit2-collage.jpg, suit2-1.jpg, suit2-2.jpg, suit2-3.jpg, suit2-4.jpg, suit2-5.jpg, suit2-6.jpg, suit2-7.jpg, suit2-8.jpg
+Gul-e-Rukh 3 | 7000 | suit3-collage.jpg, suit3-1.jpg, suit3-2.jpg, suit3-3.jpg, suit3-4.jpg, suit3-5.jpg, suit3-6.jpg, suit3-7.jpg
