@@ -329,7 +329,7 @@ function slider(p){
  s.append(tr);
  const z=mk("button","zoom");z.innerHTML=ICON_ZOOM;z.setAttribute("aria-label","View larger");z.onclick=()=>lbOpen(p.images,cur(),p.name);s.append(z);
  if(p.soldout)s.append(mk("span","badge so","Sold out"));
- else if(p.added&&Date.now()-new Date(p.added)<7*864e5)s.append(mk("span","badge","New"));
+ else if(p.added&&Date.now()-new Date(p.added)<14*864e5)s.append(mk("span","badge","New"));
  if(n>1)s.append(pv,nx,dots);upd();return s}
 
 /* card */
@@ -382,8 +382,8 @@ fetch("new.txt?"+Date.now()).then(r=>r.ok?r.text():"").then(async t=>{
  const rows=t.split(/\r?\n/).map(l=>l.trim()).filter(l=>l&&l[0]!=="#"&&l.includes("|"));
  const out=await Promise.all(rows.map(async(l,k)=>{const a=l.split("|").map(x=>x.trim()),pics=(a[2]||"").split(",").map(x=>x.trim()).filter(Boolean);
   const imgs=(await Promise.all(pics.map(f=>probe("images/"+encodeURI(f))))).filter(Boolean);
-  return a[0]&&imgs.length?{id:"n-"+k,code:"N-"+String(k+1).padStart(2,"0"),name:a[0],category:"New arrivals",price:parseInt(String(a[1]).replace(/\D/g,""))||0,details:(a[3]||"").split(";").map(x=>{const j=x.indexOf(":");return j>0?[x.slice(0,j).trim(),x.slice(j+1).trim()]:null}).filter(x=>x&&x[0]&&x[1]),images:imgs,soldout:false}:null}));
- const ok=out.filter(Boolean);if(ok.length){WOMEN.unshift(...ok);renderW()}}).catch(()=>{});
+  return a[0]&&imgs.length?{id:"n-"+k,code:"N-"+String(k+1).padStart(2,"0"),name:a[0],category:"New arrivals",price:parseInt(String(a[1]).replace(/\D/g,""))||0,details:(a[3]||"").split(";").map(x=>{const j=x.indexOf(":");return j>0?[x.slice(0,j).trim(),x.slice(j+1).trim()]:null}).filter(x=>x&&x[0]&&x[1]),images:imgs,soldout:false,added:new Date(isNaN(Date.parse(a[4]))?Date.now():Date.parse(a[4])).toISOString(),_t:isNaN(Date.parse(a[4]))?Date.now():Date.parse(a[4])}:null}));
+ const ok=out.filter(Boolean).sort((x,y)=>y._t-x._t);if(ok.length){WOMEN.unshift(...ok);renderW()}}).catch(()=>{});
 
 /* home: hero slideshow + gateway tiles */
 (function(){const h=$("hshow"),items=WOMEN.filter(p=>p.images&&p.images[0]);
